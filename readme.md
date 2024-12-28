@@ -4,14 +4,19 @@ This project implements a content-based movie recommendation system using Natura
 
 ## Overview
 
-The recommendation system uses TF-IDF (Term Frequency-Inverse Document Frequency) vectorization to convert movie plot descriptions into numerical vectors and then calculates similarity scores between movies using cosine similarity.
+The recommendation system uses TF-IDF (Term Frequency-Inverse Document Frequency) vectorization to analyze combined movie information (including plot descriptions, genres, and keywords) and calculates similarity scores between movies using cosine similarity. The system comes in two versions:
+1. Basic version (NLP_MovieRecommender.ipynb): Uses only movie overviews
+2. Enhanced version (NLP_MovieRecommender_WithMoreEntries.ipynb): Combines overview, genres, and keywords for better recommendations
 
 ## Features
 
 - Processes movie data from the TMDB 5000 movies dataset
 - Uses TF-IDF vectorization for text analysis
 - Implements cosine similarity for finding movie similarities
-- Returns top 5 similar movies based on plot descriptions
+- Returns top 5 similar movies based on:
+  - Basic version: Plot descriptions only
+  - Enhanced version: Combined analysis of plot descriptions, genres, and keywords
+- Provides more accurate recommendations by considering multiple movie attributes
 
 ## Dependencies
 
@@ -87,12 +92,23 @@ The system includes basic error handling for:
 - Movies not found in the database
 - Invalid input formats
 
+## Versions
+
+### Basic Version (NLP_MovieRecommender.ipynb)
+- Uses movie overviews only
+- Provides basic content-based recommendations
+- Lighter and faster processing
+
+### Enhanced Version (NLP_MovieRecommender_WithMoreEntries.ipynb)
+- Combines overview, genres, and keywords
+- Creates a more comprehensive similarity analysis
+- Provides more contextually relevant recommendations
+
 ## Future Improvements
 
 Potential enhancements could include:
-- Adding genre-based filtering
 - Implementing user ratings in similarity calculations
 - Adding more sophisticated NLP techniques
-- Including additional metadata in similarity calculations
-
-
+- Including weighted calculations for different features
+- Adding collaborative filtering
+- Implementing a hybrid recommendation system
